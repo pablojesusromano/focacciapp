@@ -15,7 +15,7 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
-        
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.css">
     </head>
     <body class="font-sans antialiased">
         
@@ -31,7 +31,9 @@
             <!-- Page Content -->
             <main>
                 {{ isset($slot->slot)?$slot->slot:''}}
+                <section class="py-3 my-3 mx-auto container">
                 @yield('tabla')
+                </section>
             </main>
         </div>
        
