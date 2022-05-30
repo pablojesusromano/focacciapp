@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FocacciaController;
+use App\Http\Controllers\AdminController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,3 +31,6 @@ Route::get('lista', [FocacciaController::class, 'index'])->name('lista');
 
 Route::get('subir', [FocacciaController::class, 'create'])->name('subir');
 require __DIR__.'/auth.php';
+
+
+Route::get('/admin', [AdminController::class, 'index'])->middleware('auth.admin')->name('admin.index');
