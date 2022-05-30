@@ -4,7 +4,7 @@
 
 @extends('layouts.app')
 @section('tabla')
-
+<section class="py-5 my-5 mx-auto container">
 <table id="tabla-facha" class="display">
     <thead>
         <tr>
@@ -51,4 +51,7 @@
 <script>$(document).ready( function () {
     $('#tabla-facha').DataTable();
 } );</script>
+
+</section>
+
 @endsection
