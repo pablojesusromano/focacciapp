@@ -31,8 +31,11 @@
             <!-- Page Content -->
             <main>
                 {{ isset($slot->slot)?$slot->slot:''}}
-                <section class="py-3 my-3 mx-auto container">
-                @yield('tabla')
+                <section class="py-5 my-5 mx-auto container">
+                @yield('tabla')   
+                </section>
+                <section class="py-5 my-5 mx-auto container">
+                @yield('formulario')
                 </section>
             </main>
         </div>
