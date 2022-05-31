@@ -18,7 +18,7 @@ class FocacciaController extends Controller
     {
         $datos['focaccias']= Focaccia::paginate(20);
 
-        return view('focaccia.index', $datos);
+        return view('admin.index', $datos);
     }
 
     /**
@@ -28,7 +28,7 @@ class FocacciaController extends Controller
      */
     public function create()
     {
-        return view('focaccia.create');
+        return view('admin.create');
     }
 
     /**
@@ -84,7 +84,7 @@ class FocacciaController extends Controller
     public function edit($id)
     {
         $focaccia = Focaccia::findOrFail($id);
-        return view('focaccia.edit', compact('focaccia'));
+        return view('admin.edit', compact('focaccia'));
     }
 
     /**
@@ -130,6 +130,6 @@ class FocacciaController extends Controller
     public function destroy($id)
     {
         Focaccia::destroy($id);
-        return redirect('focaccia');
+        return redirect('admin');
     }
 }

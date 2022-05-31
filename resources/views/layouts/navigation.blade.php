@@ -21,6 +21,9 @@
                     <x-nav-link :href="route('subir')" :active="request()->routeIs('create')">
                         {{ __('Agregar Focaccias') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('admin.index')" :active="request()->routeIs('index')">
+                        {{ __('Lista Usuarios') }}
+                    </x-nav-link>
                     
                 </div>
             </div>

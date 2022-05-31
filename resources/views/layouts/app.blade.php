@@ -32,7 +32,8 @@
             <main>
                 {{ isset($slot->slot)?$slot->slot:''}}
 
-                @yield('tabla')   
+                @yield('tabla')  
+                @yield('tablaUsuario')   
                 @yield('formulario')
                 
             </main>

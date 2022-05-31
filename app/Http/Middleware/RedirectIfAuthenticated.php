@@ -23,7 +23,13 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::HOME);
+                
+                // se verifica si la autenticación fue realizada desde una cuenta admin o no.
+                if(auth()->user()->role == 'admin') {
+                    return redirect()->route('admin.index');
+                } else {
+                    return redirect()->to('/');
+                }
             }
         }
 

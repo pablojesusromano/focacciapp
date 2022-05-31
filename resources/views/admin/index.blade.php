@@ -27,13 +27,13 @@
                     <img src="{{ asset('storage') . '/' . $focaccia->Foto }}" alt="" width="100">
                 </td>
                 <td>
-                    <a href="{{ url('/focaccia/' . $focaccia->id . '/edit') }}">
+                    <a href="{{ url('/admin/' . $focaccia->id . '/edit') }}">
                         Editar
                     </a>
 
                     
                 
-                    <form action="{{ url('/focaccia/' . $focaccia->id) }}" method="post">
+                    <form action="{{ url('/admin/' . $focaccia->id) }}" method="post">
                         @csrf
                        
                         {{ method_field('DELETE') }}

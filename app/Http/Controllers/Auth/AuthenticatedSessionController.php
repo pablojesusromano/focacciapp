@@ -32,7 +32,15 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        // este archivo y el RedirectIfAuthenticated de la carpeta middleware
+        // reemplazan al SessionController de Laravel 8
+
+        //verifica si la sesion almacenada es un admin u otro.
+        if(auth()->user()->role == 'admin') {
+            return redirect()->route('admin.index');
+        } else {
+            return redirect()->to('/');
+        }
     }
 
     /**
